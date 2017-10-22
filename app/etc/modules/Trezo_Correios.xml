@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * This source file is subject to the MIT License.
+ * It is also available through http://opensource.org/licenses/MIT
+ *
+ * @category  jgmartinss
+ * @package   Trezo_Correios
+ * @author    João Martins <jgmartinsss@hotmail.com>
+ * @copyright 2017 João Martins
+ * @license   http://opensource.org/licenses/MIT MIT
+ * @link      https://github.com/jgmartinss/freight-module
+ */
+-->
+<config>
+    <modules>
+        <Trezo_Correios>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Shipping />
+            </depends>
+        </Trezo_Correios>
+    </modules>
+</config>
