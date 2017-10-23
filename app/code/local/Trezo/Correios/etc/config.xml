@@ -30,16 +30,18 @@
             </trezo_correios>
         </helpers>
     </global>
-    <!--
+    
     <resources>
         <trezo_correios_setup>
             <setup>
                 <module>Trezo_Correios</module>
-                <class>Mage_Core_Model_Resource_Setup</class>
             </setup>
+            <connection>
+                <use>directory_setup</use>
+            </connection>
         </trezo_correios_setup>
     </resources>
-    -->
+    
     <!-- Default Shipping Method -->
     <default>
         <carriers>
