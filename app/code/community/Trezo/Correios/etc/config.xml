@@ -16,12 +16,15 @@
     <modules>
         <Trezo_Correios>
             <version>0.1.0</version>
+            <depends>
+                <Mage_Shipping />
+            </depends>
         </Trezo_Correios>
     </modules>
     <global>
         <models>
             <trezo_correios>
-                <class>Trezo_Correios_Model_Carrier</class>
+                <class>Trezo_Correios_Model</class>
             </trezo_correios>
         </models>
         <helpers>
@@ -30,14 +33,19 @@
             </trezo_correios>
         </helpers>
     </global>
-    
     <resources>
         <trezo_correios_setup>
             <setup>
                 <module>Trezo_Correios</module>
             </setup>
             <connection>
-                <use>directory_setup</use>
+                <use>core_setup</use>
+            </connection>
+            <connection>
+                <use>core_write</use>
+            </connection>
+            <connection>
+                <use>core_read</use>
             </connection>
         </trezo_correios_setup>
     </resources>
@@ -46,10 +54,10 @@
     <default>
         <carriers>
             <trezo_correios>
-                <active>1</active>
+                <active>0</active>
                 <sallowspecific>1</sallowspecific>
                 <model>trezo_correios/correiosmethod</model>        
-                <name>Correios Method</name>
+                <name>Correios</name>
                 <price>10.00</price>
                 <title>Correios</title>
             </trezo_correios>

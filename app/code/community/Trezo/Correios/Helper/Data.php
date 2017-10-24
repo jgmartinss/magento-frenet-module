@@ -12,7 +12,9 @@
  * @link      https://github.com/jgmartinss/freight-module
  */
 
-class Test_Customshippingmethod_Helper_Data extends Mage_Core_Helper_Abstract
+class Trezo_Correios_Helper_Data 
+	extends Mage_Core_Helper_Abstract
 {
   
 }
+

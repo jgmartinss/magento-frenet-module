@@ -16,10 +16,7 @@
     <modules>
         <Trezo_Correios>
             <active>true</active>
-            <codePool>local</codePool>
-            <depends>
-                <Mage_Shipping />
-            </depends>
+            <codePool>community</codePool>
         </Trezo_Correios>
     </modules>
 </config>

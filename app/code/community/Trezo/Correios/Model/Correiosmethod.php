@@ -12,13 +12,13 @@
  * @link      https://github.com/jgmartinss/freight-module
  */
  
-class Trezo_Correios_Model_Carrier_Correiosmethod 
+class Trezo_Correios_Model_Correiosmethod 
     extends Mage_Shipping_Model_Carrier_Abstract 
     implements Mage_Shipping_Model_Carrier_Interface
 {
     
     /**
-     * _code property
+     * _code property 
      *
      * @var string
      */
@@ -275,13 +275,7 @@ class Trezo_Correios_Model_Carrier_Correiosmethod
             $productInfo['ShippingItemArray'][]['Weight'] = $productModel->getWeight();
             $productInfo['ShippingItemArray'][]['Length'] = $productModel->getLength();
             $productInfo['ShippingItemArray'][]['Height'] = $productModel->getHeight();
-            $productInfo['ShippingItemArray'][]['Width']  = $productModel->getWidth(); 
-            
-            $category = $productModel->getCategoryIds();
-            foreach ($category as $categoryId) {
-                $cat = Mage::getModel('catalog/category')->load($categoryId);
-                $productInfo['ShippingItemArray'][]['Category'] = $cat->getName();
-            } 
+            $productInfo['ShippingItemArray'][]['Width']  = $productModel->getWidth();  
         }
 
         $productInfo['RecipientCountry'] = $request->getCountryId(); 
@@ -289,3 +283,4 @@ class Trezo_Correios_Model_Carrier_Correiosmethod
         $this->frenetQuoteData = json_encode($productInfo); 
     }
 }
+
