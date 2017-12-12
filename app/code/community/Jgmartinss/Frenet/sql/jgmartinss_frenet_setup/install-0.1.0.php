@@ -5,7 +5,7 @@
  * It is also available through http://opensource.org/licenses/MIT
  *
  * @category  jgmartinss
- * @package   Trezo_Correios
+ * @package   Jgmartinss_Frenet
  * @author    João Martins <jgmartinsss@hotmail.com>
  * @copyright 2017 João Martins
  * @license   http://opensource.org/licenses/MIT MIT

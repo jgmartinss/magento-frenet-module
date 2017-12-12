@@ -5,19 +5,19 @@
  * It is also available through http://opensource.org/licenses/MIT
  *
  * @category  jgmartinss
- * @package   Trezo_Correios
+ * @package   Jgmartinss_Frenet
  * @author    João Martins <jgmartinsss@hotmail.com>
  * @copyright 2017 João Martins
  * @license   http://opensource.org/licenses/MIT MIT
  * @link      https://github.com/jgmartinss/freight-module
  */
--->
+ -->
 <config>
     <sections>
         <carriers>
             <groups>
-                <trezo_correios translate="label">
-                    <label>Shipping Method Correios</label>
+                <jgmartinss_frenet translate="label">
+                    <label>Frenet</label>
                     <sort_order>1</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>0</show_in_website>
@@ -48,50 +48,29 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                         </additional_days>
-                        <username translate="label">
-                            <label>Username</label>
+                        <url_quote translate="label">
+                            <label>Api Quote</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-                        </username>
-                        <sftp_password translate="label">
-                            <label>Password</label>
-                            <frontend_type>password</frontend_type>
-                            <sort_order>50</sort_order>
-                            <show_in_default>1</show_in_default>
-                        </sftp_password>
-                        <api_quote translate="label">
-                            <label>Api Quote</label>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>60</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
-                        </api_quote>
-                        <api_tracking translate="label">
-                            <label>Api Tracking</label>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>70</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                            <show_in_store>0</show_in_store>
-                        </api_tracking>
-                        <api_token translate="label">
+                            <comment><![CDATA[http://api.frenet.com.br/shipping/quote]]></comment>
+                        </url_quote>
+                        <token translate="label">
                             <label>Api Token</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>80</sort_order>
+                            <sort_order>50</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-                        </api_token>
+                        </token>
                         <sallowspecific translate="label">
                             <label>For selected countries only</label>
                             <frontend_type>select</frontend_type>
                             <frontend_class>shipping-applicable-country</frontend_class>
                             <source_model>adminhtml/system_config_source_shipping_allspecificcountries</source_model>
-                            <sort_order>90</sort_order>
+                            <sort_order>60</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -99,7 +78,7 @@
                         <specificcountry translate="label">
                             <label>Ship to Specific Countries</label>
                             <frontend_type>multiselect</frontend_type>
-                            <sort_order>100</sort_order>
+                            <sort_order>70</sort_order>
                             <source_model>adminhtml/system_config_source_country</source_model>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
@@ -107,7 +86,7 @@
                             <can_be_empty>1</can_be_empty>
                         </specificcountry>
                     </fields>
-                </trezo_correios>
+                </jgmartinss_frenet>
             </groups>
         </carriers>
     </sections>

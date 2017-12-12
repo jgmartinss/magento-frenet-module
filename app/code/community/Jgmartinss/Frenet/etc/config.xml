@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * This source file is subject to the MIT License.
+ * It is also available through http://opensource.org/licenses/MIT
+ *
+ * @category  jgmartinss
+ * @package   Jgmartinss_Frenet
+ * @author    João Martins <jgmartinsss@hotmail.com>
+ * @copyright 2017 João Martins
+ * @license   http://opensource.org/licenses/MIT MIT
+ * @link      https://github.com/jgmartinss/freight-module
+ */
+ -->
+<config>
+    <modules>
+        <Jgmartinss_Frenet>
+            <version>1.0.0</version>
+            <depends>
+                <Mage_Shipping />
+            </depends>
+        </Jgmartinss_Frenet>
+    </modules>
+    <frontend>
+	    <translate>
+	        <modules>
+	            <translations>
+	                <files>
+	                    <default>Jgmartinss_Frenet.csv</default>
+	                </files>
+	            </translations>
+	        </modules>
+	    </translate>
+	</frontend>
+	<adminhtml>
+	    <translate>
+	        <modules>
+	            <translations>
+	                <files>
+	                    <default>Jgmartinss_Frenet.csv</default>
+	                </files>
+	            </translations>
+	        </modules>
+	    </translate>
+	</adminhtml>
+    <global>
+        <models>
+            <jgmartinss_frenet>
+                <class>Jgmartinss_Frenet_Model</class>
+            </jgmartinss_frenet>
+        </models>
+        <helpers>
+            <jgmartinss_frenet>
+                <class>Jgmartinss_Frenet_Helper</class>
+            </jgmartinss_frenet>
+        </helpers>
+    </global>
+    <resources>
+        <jgmartinss_frenet_setup>
+            <setup>
+                <module>Jgmartinss_Frenet</module>
+            </setup>
+            <connection>
+                <use>core_setup</use>
+            </connection>
+            <connection>
+                <use>core_write</use>
+            </connection>
+            <connection>
+                <use>core_read</use>
+            </connection>
+        </jgmartinss_frenet_setup>
+    </resources>
+    <default>
+        <carriers>
+            <jgmartinss_frenet>
+                <active>1</active>
+                <sallowspecific>1</sallowspecific>
+                <specificcountry>BR</specificcountry>
+                <model>Jgmartinss_Frenet_Model_Frenetmethod</model>        
+                <title>Frenet</title>
+                <additional_days>0</additional_days>
+                <url_quote>http://api.frenet.com.br/shipping/quote</url_quote>
+                <token>8713E4FBR8EFCR4D61R9FDER4045FBF8721C</token>
+            </jgmartinss_frenet>
+        </carriers>
+    </default>
+</config>
