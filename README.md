@@ -1,4 +1,4 @@
-## Freight Module with Tracking for Magento 1.9
+## Freight Module for Magento 1.9
 
 ### Api (Frenet)
 
