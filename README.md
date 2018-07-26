@@ -1,5 +1,22 @@
-## Freight Module for Magento 1.9
+# Magento/Frenet Integration module
+> This is the Magento module for integration with the Frenet API.
 
-### Api (Frenet)
+## Documentation in other languages
+* [Brazilian portuguese](README.pt-br.md)
 
-http://docs.frenetapi.apiary.io/#reference/shipping/quote/post
+## System requirements
+PHP 5.6 | Magento 1.9.0 to 1.9.3.x
+
+## Installation via Download
+- Download the lastest version of **frenet-module-0.0.1.tgz**
+Link: https://github.com/jgmartinss/magento-frenet-module/var/connect
+
+## Installation with modman
+modman: https://github.com/colinmollenhour/modman
+
+    $ cd /path/to/magento
+    $ modman init
+    $ modman clone https://github.com/jgmartinss/magento-frenet-module
+
+## API Reference
+https://frenetapi.docs.apiary.io/

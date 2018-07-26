@@ -1,34 +1,25 @@
 <?php
-
 /**
  * This source file is subject to the MIT License.
  * It is also available through http://opensource.org/licenses/MIT
  *
- * @category  module
+ * @category  module-magento
  * @package   Jgmartinss_Frenet
  * @author    João Martins <jgmartinsss@hotmail.com>
- * @copyright 2017 João Martins
+ * @copyright 2018 João Martins
  * @license   http://opensource.org/licenses/MIT MIT
- * @link      https://github.com/jgmartinss/freight-module
+ * @link      https://github.com/jgmartinss/magento-frenet-module
  */
  
 class Jgmartinss_Frenet_Model_Frenetmethod 
     extends Mage_Shipping_Model_Carrier_Abstract 
-    implements Mage_Shipping_Model_Carrier_Interface
+        implements Mage_Shipping_Model_Carrier_Interface
 {
     
     const CODE = 'jgmartinss_frenet';
 
     protected $_code = self::CODE;
 
-    protected $frenetData = null;
-
-    /**
-     * Collect Rate Frenet Api
-     *
-     * @param Mage_Shipping_Model_Rate_Request $request Mage request
-     *
-     */
 
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
@@ -39,14 +30,14 @@ class Jgmartinss_Frenet_Model_Frenetmethod
         $result = Mage::getModel('shipping/rate_result');
         $helper = Mage::helper('jgmartinss_frenet');
 
-        $this->prepareQuoteData($request);
-
         $response = json_decode(
-            $helper->getFrenetData($helper->getUrlQuote(), $this->frenetData), true
+            $helper->curlPost(
+                $helper->getUrlQuote(), 
+                $this->prepareQuoteData($request, $helper)
+            ), true
         );
-        
+
         foreach ($response['ShippingSevicesArray'] as $rateFrenet) {
-            
             $serviceCode = $rateFrenet['ServiceCode'];
             $serviceDescription = $rateFrenet['ServiceDescription'];
             $shippingPrice = $rateFrenet['ShippingPrice'];
@@ -65,20 +56,14 @@ class Jgmartinss_Frenet_Model_Frenetmethod
         return $result;
     }
     
-    /**
-     *  @param $request
-     *
-     *  @return json
-     */
-
-    private function prepareQuoteData($request)
+    private function prepareQuoteData($request, $helper)
     {
-        $productIds   = array();
-        $productInfo  = array();
+        $productIds = array();
+        $productInfo = array();
 
         $quote = Mage::getModel('checkout/cart')->getQuote();
-        $productInfo['SellerCEP'] = $request->getPostcode();
-        $productInfo['RecipientCEP'] = $request->getDestPostcode();        
+        $productInfo['SellerCEP'] = $helper->getRealPosteCode($request->getPostcode());
+        $productInfo['RecipientCEP'] = $helper->formaterNumber($request->getDestPostcode());        
         $productInfo['ShipmentInvoiceValue'] = $request->getPackageValueWithDiscount();
 
         foreach($quote->getAllItems() as $item) {
@@ -92,37 +77,23 @@ class Jgmartinss_Frenet_Model_Frenetmethod
             $productInfo['ShippingItemArray'][]['Weight'] = $productModel->getWeight();
             $productInfo['ShippingItemArray'][]['Length'] = $productModel->getLength();
             $productInfo['ShippingItemArray'][]['Height'] = $productModel->getHeight();
-            $productInfo['ShippingItemArray'][]['Width']  = $productModel->getWidth();  
+            $productInfo['ShippingItemArray'][]['Width'] = $productModel->getWidth();  
         }
 
         $productInfo['RecipientCountry'] = $request->getCountryId(); 
-
-        $this->frenetData = json_encode($productInfo); 
+        
+        return json_encode($productInfo); 
     }
-    
-    /**
-     * Returns the allowed carrier methods
-     *
-     * @return array
-     */
     
     public function getAllowedMethods()
     {
-        return array(
-            'jgmartinss_frenet' => $this->getConfigData('title'),
-        );
+        return [
+            $this->$_code => $this->getConfigData('title'),
+        ];
     }
-
-    /**
-     * Check if current carrier offer support to tracking
-     *
-     * @return bool true
-     */
 
     public function isTrackingAvailable() 
     {  
-        return false;
+        return false; 
     }
-
 }
-

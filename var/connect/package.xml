@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>frenet-module</name>
+    <version>0.0.1</version>
+    <stability>stable</stability>
+    <license>MIT</license>
+    <channel>jgmartinss</channel>
+    <extends/>
+    <summary>.</summary>
+    <description>.</description>
+    <notes>.</notes>
+    <authors><author><name>Jo&#xE3;o Martins</name><user>joao</user><email>jgmartinsss@hotmail.com</email></author></authors>
+    <date>2018-07-26</date>
+    <time>14:39:32</time>
+    <contents><target name="magecommunity"><dir name="Jgmartinss"><dir name="Frenet"><dir name="Helper"><file name="Data.php" hash="3be8e60aad139545475ca6b0b177fd9b"/></dir><dir name="Model"><file name="Frenetmethod.php" hash="cca56defe2a8df957df02ccbb1eb870f"/></dir><dir name="etc"><file name="config.xml" hash="5120ba159f1daebb9a2746f4eb6c4500"/><file name="system.xml" hash="b7a28c19f98fd68a40916f0e842a2817"/></dir><dir name="sql"><dir name="jgmartinss_frenet_setup"><file name="install-0.0.1.php" hash="d67f4622ed4b4cbb06b7f5adac1b3831"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Jgmartinss_Frenet.xml" hash="9a4ca7b3db5dfe64dcdb7cb5f87e7925"/></dir></target><target name="magelocale"><dir name="pt_BR"><file name="Jgmartinss_Frenet.csv" hash="14f40454eb2478b3e6bb288575b95313"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.5.0</min><max>5.6.1</max></php></required></dependencies>
+</package>

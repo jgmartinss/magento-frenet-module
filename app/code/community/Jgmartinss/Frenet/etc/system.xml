@@ -4,12 +4,12 @@
  * This source file is subject to the MIT License.
  * It is also available through http://opensource.org/licenses/MIT
  *
- * @category  jgmartinss
+ * @category  module-magento
  * @package   Jgmartinss_Frenet
  * @author    João Martins <jgmartinsss@hotmail.com>
- * @copyright 2017 João Martins
+ * @copyright 2018 João Martins
  * @license   http://opensource.org/licenses/MIT MIT
- * @link      https://github.com/jgmartinss/freight-module
+ * @link      https://github.com/jgmartinss/magento-frenet-module
  */
  -->
 <config>
@@ -47,30 +47,59 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Additional days will be added with API delivery time.]]></comment>
                         </additional_days>
-                        <url_quote translate="label">
-                            <label>Api Quote</label>
+                        <source_postal_code translate="label">
+                            <label>Source postal code</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[http://api.frenet.com.br/shipping/quote]]></comment>
-                        </url_quote>
+                            <comment><![CDATA[Ex: 89225570]]></comment>
+                        </source_postal_code>
                         <token translate="label">
-                            <label>Api Token</label>
+                            <label>Api - Token</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>50</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
+                            <comment><![CDATA[token provided by API.]]></comment>
                         </token>
+                        <url_quote translate="label">
+                            <label>Api - Url Quote</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[http://api.frenet.com.br/shipping/quote]]></comment>
+                        </url_quote>
+                        <url_tracking translate="label">
+                            <label>Api - Url Tracking</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[http://api.frenet.com.br/tracking/trackinginfo]]></comment>
+                        </url_tracking>
+                        <url_postal_code translate="label">
+                            <label>Api - Url Get postal code</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[http://api.frenet.com.br/CEP/Address/]]></comment>
+                        </url_postal_code>
                         <sallowspecific translate="label">
                             <label>For selected countries only</label>
                             <frontend_type>select</frontend_type>
                             <frontend_class>shipping-applicable-country</frontend_class>
                             <source_model>adminhtml/system_config_source_shipping_allspecificcountries</source_model>
-                            <sort_order>60</sort_order>
+                            <sort_order>90</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -78,14 +107,14 @@
                         <specificcountry translate="label">
                             <label>Ship to Specific Countries</label>
                             <frontend_type>multiselect</frontend_type>
-                            <sort_order>70</sort_order>
+                            <sort_order>100</sort_order>
                             <source_model>adminhtml/system_config_source_country</source_model>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                             <can_be_empty>1</can_be_empty>
                         </specificcountry>
-                    </fields>
+                    </fields> 
                 </jgmartinss_frenet>
             </groups>
         </carriers>
