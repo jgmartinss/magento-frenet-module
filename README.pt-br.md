@@ -6,7 +6,7 @@ PHP 5.6 | Magento 1.9.0 to 1.9.3.x
 
 ## Instalação via Download
 - Baixe a última versão do (frenet-module-0.0.1.tgz).
-[RSS 2.0 specification](https://github.com/jgmartinss/magento-frenet-module/blob/master/var/connect/frenet-module-0.0.1.tgz)
+[Link](https://github.com/jgmartinss/magento-frenet-module/blob/master/var/connect/frenet-module-0.0.1.tgz)
 
 ## Instalação com Modman
 modman: https://github.com/colinmollenhour/modman
