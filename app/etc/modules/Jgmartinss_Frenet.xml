@@ -4,12 +4,12 @@
  * This source file is subject to the MIT License.
  * It is also available through http://opensource.org/licenses/MIT
  *
- * @category  jgmartinss
+ * @category  module-magento
  * @package   Jgmartinss_Frenet
  * @author    João Martins <jgmartinsss@hotmail.com>
- * @copyright 2017 João Martins
+ * @copyright 2018 João Martins
  * @license   http://opensource.org/licenses/MIT MIT
- * @link      https://github.com/jgmartinss/freight-module
+ * @link      https://github.com/jgmartinss/magento-frenet-module
  */
  -->
 <config>
